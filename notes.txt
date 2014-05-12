@@ -1,0 +1,28 @@
+The password for the admin section of the classrooms site is
+edtech
+1/25/04 AMB
+
+3/17-08 Fixed problem with advanced search not being able to search by room number
+Changed line 26 from
+		$sql_str .= " AND RoomNumber = '$room'"; }
+to
+		$sql_str .= " AND RoomNumber LIKE '%$room%'"; }//changed EQUAL to LIKE & added % around $room
+We still need to fix the fact that the Rooms schedules for those that were changed doesn't show when we click on the room.
+Add a search by faculty feature.  
+
+3/9/2010
+The image reference was hard coded into the RoomBuilding field.  The html and the reference to the actual image were all part of that 
+field.  I added 2 fields. The first indicates whether an image exists. The second is a building code w/o spaces. The building code 
+was used to reference the images which were named with BuildingCode + RoomNumber.jpg.
+
+The code in Index.php then needed to be adjusted. This was done with an if statement added to the middle of each .$results section
+line 82 and 119.  If the image field contained a 1, there was an image and the appropriate html was generated so that the image would 
+appear. 
+
+3/13/10
+--Would like to be able to search for 'other rooms with DVD players' by having links on the pages that say what equipment they have in them
+such as 1) Results page and 2) the individual room schedules
+--
+
+2/2/11
+Fixed spelling.  Bibbons should be Bibbins.
